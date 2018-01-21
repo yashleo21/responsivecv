@@ -16,24 +16,25 @@
       
       #container{
            width:100%;
-          overflow:hidden;
-        white-space:nowrap;
+           overflow:hidden;
+           white-space:nowrap;
       }
 
       #left{
-        background-color:  #FFFFFF;
+        background-color:  #000000;
         width: 50%;
         height: 100%;
         float: left;
+           color: white;
         display:inline-block;
         
       }
 
       #right{
         height: 100%;
-        background-color:  #000000;
+        background-color: #FFFFFF;
         width: 50%;
-        color: white;
+       
         display:inline-block;
        
       }
@@ -87,32 +88,23 @@
       
 
 <script>
-      
-//    $("#left").hover(
-//    function(){
-//    $(this).addClass("hvr-sweep-to-right");
-//     $(this).animate({
-//         width: '70%'
-//     });
-//    }, function(){
-//        $(this).animate({
-//            width: '50%'
-//        });
-//    });
-//    
     $("#left, #right").each(function() {
     $(this).data("standardWidth", $(this).width());
 });
 
 $("#left, #right").hover(function() {
-    $(this).addClass("hvr-sweep-to-right");
+    
+          $(this).addClass("hvr-sweep-to-right");
     $(this).animate({
         width: "70%"
     }, 300 );
     $(this).parent().children().not(this).animate({
         width: "30%"
     }, 300 );
+    
+  
 }, function() {
+    $(this).stop(true,true);
     $(this).removeClass("hvr-sweep-to-right");
     $(this).parent().children().each(function() {
         $(this).animate({
@@ -121,6 +113,8 @@ $("#left, #right").hover(function() {
     });
 });
     
+    
+
   
     
 </script>
