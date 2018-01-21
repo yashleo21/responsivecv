@@ -1,0 +1,128 @@
+<html>
+<head>
+  <title>Choose your poison</title>
+  <meta charset="utf-8"/>
+  <style type="text/css">
+
+      html, body{
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+
+      body{
+        width: 100%;
+      }
+      
+      #container{
+           width:100%;
+          overflow:hidden;
+        white-space:nowrap;
+      }
+
+      #left{
+        background-color:  #FFFFFF;
+        width: 50%;
+        height: 100%;
+        float: left;
+        display:inline-block;
+        
+      }
+
+      #right{
+        height: 100%;
+        background-color:  #000000;
+        width: 50%;
+        color: white;
+        display:inline-block;
+       
+      }
+      
+      .clear{
+          clear:both;
+      }
+      
+      h1{
+          margin-top: 0px;
+          font-size: 60pt;
+          text-align: center;
+          padding-top: 50px;
+          font-family: 'Arvo', serif;
+      }
+      
+      .nametag{
+          text-align: center;
+          font-size: 25pt;
+          font-family: 'Fjalla One', sans-serif;
+          position: relative;
+          top: 550px;
+      }
+      
+      
+      
+  </style>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Arvo|Fjalla+One" rel="stylesheet">
+<link href="css/hover-min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    
+    
+</head>
+  <body>
+    
+     <div id="container">
+    <div id="left">
+      <h1>I develop.</h1>
+        <p class="nametag" id="leftName">Yash Pratap Singh</p>
+    </div>
+    <div id="right">
+      <div>
+        <h1>I design.</h1>
+          <p class="nametag">Harsh</p>
+        </div>
+    </div>
+    <div class="clear"></div>
+  </div>  
+      
+
+<script>
+      
+//    $("#left").hover(
+//    function(){
+//    $(this).addClass("hvr-sweep-to-right");
+//     $(this).animate({
+//         width: '70%'
+//     });
+//    }, function(){
+//        $(this).animate({
+//            width: '50%'
+//        });
+//    });
+//    
+    $("#left, #right").each(function() {
+    $(this).data("standardWidth", $(this).width());
+});
+
+$("#left, #right").hover(function() {
+    $(this).addClass("hvr-sweep-to-right");
+    $(this).animate({
+        width: "70%"
+    }, 300 );
+    $(this).parent().children().not(this).animate({
+        width: "30%"
+    }, 300 );
+}, function() {
+    $(this).removeClass("hvr-sweep-to-right");
+    $(this).parent().children().each(function() {
+        $(this).animate({
+            width: $(this).data("standardWidth")
+        }, 300 );
+    });
+});
+    
+  
+    
+</script>
+  </body>
+</html>
