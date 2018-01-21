@@ -83,12 +83,16 @@
       .bubble {
     width: 60px;
     height: 60px;
-    background: #08e901 ;
+    background: #000000;
     border-radius: 200px;
     -moz-border-radius: 200px;
     -webkit-border-radius: 200px;
     position: absolute;
 }
+      
+      .bubbleright{
+          background: #FFFFFF;
+      }
 
 .x1 {
     -webkit-transform: scale(0.9);
@@ -173,6 +177,90 @@
     -moz-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
     -o-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
 }
+      
+      .y1 {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.2;
+    -webkit-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.y2 {
+    right: 200px;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.5;
+    -webkit-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -o-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+.y3 {
+    right: 350px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+    -webkit-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+.y4 {
+    right: 470px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.35;
+    -webkit-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -o-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+.y5 {
+    right: 150px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3; 
+    -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -o-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+}
+      
+      .y6{
+          right: 580px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+    -webkit-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+      }
+      
+      .y7 {
+    right: 650px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.35;
+    -webkit-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -o-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+      
+      .y8 {
+    right: 760px;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.45;
+    -webkit-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -o-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
 @-webkit-keyframes moveclouds { 
     0% { 
         top: 500px;
@@ -226,7 +314,14 @@
         margin-left:50px;
     }
 }
-       
+    
+      #leftimg{
+          width: 450px;
+          height: 400px;
+          position: absolute;
+          left: 250px;
+          display: none;
+      }
   </style>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -253,6 +348,7 @@
         <div class="bubble x7"></div>
         <div class="bubble x8"></div>
       <h1>I develop.</h1>
+       <img id="leftimg" src="images/leftstick.png">
         <p class="nametag" id="leftName">Yash Pratap Singh</p>
         <div class="iconrow">
         <i class="devicon-android-plain-wordmark colored "></i>
@@ -267,14 +363,21 @@
         </div>
     </div>
     <div id="right">
-      <div>
+         <div class="bubble bubbleright y1"></div>
+        <div class="bubble bubbleright y2"></div>
+        <div class="bubble bubbleright y3"></div>
+        <div class="bubble bubbleright y4"></div>
+        <div class="bubble bubbleright y5"></div>
+        <div class="bubble bubbleright y6"></div>
+        <div class="bubble bubbleright y7"></div>
+        <div class="bubble bubbleright y8"></div>
         <h1>I design.</h1>
           <p class="nametag">Harsh Rhimes </p>
           <div class="iconrow iconright">
           <i class="devicon-photoshop-line"></i>
           <i class="devicon-illustrator-line"></i>
           </div>
-        </div>
+        
     </div>
     <div class="clear"></div>
   </div>  
@@ -305,11 +408,24 @@
 //    });
 //});
     
-    $("#left, #right").hover(function() {
+    $("#left").hover(function() {
+        $(this).removeClass("hvr-shrink");
+        $(this).addClass("hvr-grow");
+        $("#leftimg").fadeIn();
+        
+    }, function(){
+        $("#leftimg").fadeOut();
+        $(this).removeClass("hvr-grow");
+        $(this).addClass("hvr-shrink");
+    });
+    
+    $("right").hover(function() {
         $(this).removeClass("hvr-shrink");
         $(this).addClass("hvr-grow");
         
+        
     }, function(){
+       
         $(this).removeClass("hvr-grow");
         $(this).addClass("hvr-shrink");
     });
