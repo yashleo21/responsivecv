@@ -21,20 +21,19 @@
       }
 
       #left{
-        background-color:  #000000;
+        background-color:  #FFFFFF;
         width: 50%;
         height: 100%;
         float: left;
-           color: white;
         display:inline-block;
         
       }
 
       #right{
         height: 100%;
-        background-color: #FFFFFF;
+        background-color:  #000000;
         width: 50%;
-       
+        color: white;
         display:inline-block;
        
       }
@@ -53,21 +52,45 @@
       
       .nametag{
           text-align: center;
-          font-size: 25pt;
+          font-size: 35pt;
           font-family: 'Fjalla One', sans-serif;
           position: relative;
-          top: 550px;
+          top: 500px;
       }
       
+      body{
+          background-color: black;
+      }
       
+    
+      .iconrow{
+          height: auto;
+          float: left;
+          padding-left: 20px;
+          font-size: 74px;
+          margin-left: 50px;
+          padding-top: 20px;
+          padding-right: 20px;
+          position: relative;
+          top: 500px;
+      }
+      
+      .iconright{
+          position: relative;
+          left: 340px;
+      }
       
   </style>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Arvo|Fjalla+One" rel="stylesheet">
 <link href="css/hover-min.css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
-    
+<!--
+<link href="css/devicon-colors.css" rel="stylesheet">
+<link href="css/devicon.min.css" rel="stylesheet">
+-->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
     
 </head>
   <body>
@@ -76,11 +99,26 @@
     <div id="left">
       <h1>I develop.</h1>
         <p class="nametag" id="leftName">Yash Pratap Singh</p>
+        <div class="iconrow">
+        <i class="devicon-android-plain-wordmark colored "></i>
+        <i class="devicon-bootstrap-plain-wordmark colored"></i>
+        <i class="devicon-github-plain colored"></i>
+        <i class="devicon-html5-plain-wordmark colored"></i>
+        <i class="devicon-java-plain-wordmark colored"></i>
+        <i class="devicon-javascript-plain colored"></i>
+        <i class="devicon-jquery-plain-wordmark colored"></i>
+        <i class="devicon-nodejs-plain-wordmark colored"></i>
+        <i class="devicon-python-plain-wordmark colored"></i>
+        </div>
     </div>
     <div id="right">
       <div>
         <h1>I design.</h1>
           <p class="nametag">Harsh</p>
+          <div class="iconrow iconright">
+          <i class="devicon-photoshop-line"></i>
+          <i class="devicon-illustrator-line"></i>
+          </div>
         </div>
     </div>
     <div class="clear"></div>
@@ -91,27 +129,34 @@
     $("#left, #right").each(function() {
     $(this).data("standardWidth", $(this).width());
 });
-
-$("#left, #right").hover(function() {
     
-          $(this).addClass("hvr-sweep-to-right");
-    $(this).animate({
-        width: "70%"
-    }, 300 );
-    $(this).parent().children().not(this).animate({
-        width: "30%"
-    }, 300 );
     
-  
-}, function() {
-    $(this).stop(true,true);
-    $(this).removeClass("hvr-sweep-to-right");
-    $(this).parent().children().each(function() {
-        $(this).animate({
-            width: $(this).data("standardWidth")
-        }, 300 );
+//$("#left, #right").hover(function() {
+//
+//          $(this).addClass("hvr-sweep-to-right");
+//    $(this).stop().animate({
+//        width: "70%"
+//    }, 300 );
+//    $(this).parent().children().not(this).animate({
+//        width: "30%"
+//    }, 300 );
+//  
+//}, function() {
+//    $(this).removeClass("hvr-sweep-to-right");
+//    $(this).parent().children().each(function() {
+//        $(this).animate({
+//            width: $(this).data("standardWidth")
+//        }, 300 );
+//    });
+//});
+    
+    $("#left, #right").hover(function() {
+        
+        $(this).addClass("hvr-grow");
+        
+    }, function(){
+        $(this).removeClass("hvr-grow");
     });
-});
     
     
 
